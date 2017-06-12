@@ -11,7 +11,7 @@ cv2.waitKey(0)
 print image.shape
 
 # 保持图片的宽高等比例缩放，以保证图片显示不变形
-# 计算新图片相对与旧图片的比例
+# 计算新图片相对于旧图片的比例
 r = 100.0/image.shape[1]
 dim = (100, int(image.shape[0]*r))
 
@@ -34,3 +34,7 @@ cv2.waitKey(0)
 cropped = image[70:170, 440:540]
 cv2.imshow("cropped", cropped)
 cv2.waitKey(0)
+
+# 将剪切后的图片以PNG格式保存至磁盘
+cv2.imwrite("thumbnail.png", cropped)
+
